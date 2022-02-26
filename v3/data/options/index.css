@@ -1,0 +1,124 @@
+body {
+  width: 80%;
+  margin: 10px auto;
+  font-size: 13px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background-color: #fff;
+  color: #4d5156;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    width: unset;
+    margin: 10px;
+  }
+}
+
+select,
+button,
+input[type=submit],
+input[type=button] {
+  height: 24px;
+  color: #444;
+  background-image: linear-gradient(rgb(237, 237, 237), rgb(237, 237, 237) 38%, rgb(222, 222, 222));
+  box-shadow: rgba(0, 0, 0, 0.08) 0 1px 0, rgba(255, 255, 255, 0.75) 0 1px 2px inset;
+  text-shadow: rgb(240, 240, 240) 0 1px 0;
+}
+select,
+button,
+textarea,
+input {
+  border: solid 1px rgba(0, 0, 0, 0.25);
+}
+input[type=button]:disabled {
+  opacity: 0.5;
+}
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+textarea,
+input[type=text],
+input[type=number] {
+  padding: 5px;
+  outline: none;
+}
+textarea:focus,
+input[type=text]:focus,
+input[type=number]:focus {
+  background-color: #e5f8ff;
+}
+a,
+a:visited {
+  color: #07c;
+  text-decoration: none;
+}
+code {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0 3px;
+}
+code:empty::after {
+  content: 'not defined';
+  font-family: italic;
+}
+hr {
+  border: none;
+  border-top: dashed 1px #ccc;
+}
+h2 {
+  font-weight: normal;
+  background-color: #e8f9ff;
+  padding: 10px;
+}
+ol {
+  padding-left: 1.8em;
+}
+li {
+  margin-bottom: 5px;
+}
+
+.note {
+  color: #005370;
+  margin-bottom: 10px;
+  text-align: left !important;
+  white-space: normal !important;
+}
+table.tbl {
+  width: 100%;
+}
+.tbl td:first-child {
+  width: 1px;
+  white-space: nowrap;
+}
+.tbl td:last-child {
+  text-align: right;
+}
+.admin {
+  background-color: #ffffed;
+  border: solid 1px #e8ec3a;
+  padding: 10px;
+  margin: 15px 0;
+}
+.intro {
+  border-collapse: collapse;
+}
+.intro td {
+  padding: 5px 2px;
+}
+.intro tr:nth-child(odd) {
+  background-color: #e8f9ff;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  grid-gap: 5px;
+  align-items: center;
+}
+.lft {
+  text-align: left !important;
+  white-space: normal !important;
+}
+#path {
+  margin: 5px 0 10px 0;
+}

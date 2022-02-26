@@ -1,0 +1,80 @@
+{
+  "save-images": {
+    "name": "Download All Images"
+  },
+  "country-flags": {
+    "name": "Country Flags & IP WHOIS"
+  },
+  "privacy-settings": {
+    "name": "Privacy Settings"
+  },
+  "media-converter": {
+    "name": "Media Converter and Muxer"
+  },
+  "tab-discard": {
+    "name": "Auto Tab Discard"
+  },
+  "media-player": {
+    "name": "YouTube Media Player"
+  },
+  "work-offline": {
+    "name": "Work Offline"
+  },
+  "send-to": {
+    "name": "Send to VLC"
+  },
+  "two-factor-authenticator": {
+    "name": "Open Two-Factor Authenticator"
+  },
+  "useragent-switcher": {
+    "name": "User-Agent Switcher and Manager"
+  },
+  "chrome-reader-view": {
+    "name": "Reader View"
+  },
+  "block-site": {
+    "name": "Block Site"
+  },
+  "convert-to": {
+    "name": "Convert to PDF"
+  },
+  "dark-theme": {
+    "name": "Dark Theme"
+  },
+  "mute-tab": {
+    "name": "Mute Tab"
+  },
+  "proxy-switcher": {
+    "name": "Proxy Switcher"
+  },
+  "gmail-notifier": {
+    "name": "Gmail Notifier"
+  },
+  "font-finder": {
+    "name": "Font Finder"
+  },
+  "audio-equalizer": {
+    "name": "Audio Equalizer"
+  },
+  "popup-blocker": {
+    "name": "Popup Blocker"
+  },
+  "ecleaner": {
+    "name": "Forget Button"
+  },
+  "epub-viewer": {
+    "name": "ePub Viewer"
+  },
+  "sqlite-viewer": {
+    "name": "SQLite Viewer"
+  },
+  "bookmarks-commander": {
+    "name": "Bookmarks Commander"
+  },
+  "search-all-tabs": {
+    "name": "Search all Tabs"
+  },
+  "dino": {
+    "name": "Dino - The Dinosaur Game"
+  }
+}

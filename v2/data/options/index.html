@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open In Internet Explorer :: Options Page</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <h2>Open With Keyboard and Click</h2>
+  <table class="tbl">
+    <tr>
+      <td><label for="enabled">Enabled</label></td>
+      <td><input id="enabled" type="checkbox"></td>
+    </tr>
+    <tr>
+      <td>Mouse click<sup>4</sup></td>
+      <td>
+        <label>Ctrl <input id="ctrlKey" type="checkbox"></label>&nbsp;+&nbsp;
+        <label>Alt <input id="altKey" type="checkbox"></label>&nbsp;+&nbsp;
+        <label>Shift <input id="shiftKey" type="checkbox"></label>&nbsp;+&nbsp;
+        <label>Meta <input id="metaKey" type="checkbox"></label>&nbsp;+&nbsp;
+        <select id="button">
+          <option value=0>Left Click</option>
+          <option value=1 disabled="true">Middle Click</option>
+          <option value=2 disabled="true">Right Click</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" class="note">Not all key combinations are allowed in all operating systems.</td>
+    </tr>
+  </table>
+  <h2>Open with Click</h2>
+  <table class="tbl">
+    <tr>
+      <td colspan="2" class="lft">Comma-separated list of domains to open with IE when the link is opened with left-click<sup>1</sup></td>
+    </tr>
+    <tr>
+      <td colspan="2"><textarea id="hosts" rows="3" placeholder="e.g.: www.google.com, bing.com"></textarea></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="note">It is possible to use "managed storage" to set the default host and URL list. This is useful for administrators to force opening a set of URLs or hostnames in another browser. Instruction on how to setup the managed storage can be found in the FAQs page.</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="lft">Comma-separated list of URLs to open with IE when the link is opened with left-click<sup>1</sup></td>
+    </tr>
+    <tr>
+      <td colspan="2"><textarea id="urls" rows="3" placeholder="e.g.: https://www.google.com/, https://bing.com/"></textarea></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="lft">Comma-separated list of keywords to open with IE when the link is opened with left-click<sup>1</sup></td>
+    </tr>
+    <tr>
+      <td colspan="2"><textarea id="keywords" rows="3" placeholder="e.g.: explore"></textarea></td>
+    </tr>
+  </table>
+  <div class="grid">
+    <label for="reverse">Reverse Mode<sup>5</sup></label>
+    <input type="checkbox" id="reverse">
+    <span class="note">When enabled, all left-click links except the ones that match with at least one condition will be sent to the external executable.</span>
+    <span></span>
+    <label for="topRedict">Consider even top-level navigation<sup>6</sup></label>
+    <input type="checkbox" id="topRedict">
+    <span class="note">If checked, the extension validates top-level navigation with the list of left-click hostnames and URLs. If matched, the URL is sent to the external executable, and the navigation is blocked.</span>
+    <span></span>
+    <label for="duplicate">Open captured links for left-click in both browsers (IE, and the source browser)</label>
+    <input type="checkbox" id="duplicate">
+
+  </div>
+  <h2>Others</h2>
+  <div class="grid">
+    <label for="closeme">Close the source tab when link is pushed</label>
+    <input type="checkbox" id="closeme">
+    <label for="multiple">Open multiple links at once<sup>3</sup></label>
+    <input type="checkbox" id="multiple">
+    <span class="note">By activating this option all the requested URLs are sent to the external executable at once. Only activate this option if the external executable is capable of handling this type of requests.</span>
+    <span></span>
+    <label for="faqs">Open FAQs page on updates</label>
+    <input type="checkbox" id="faqs">
+  </div>
+  <div>
+    <span style="margin-top: 10px; margin-bottom: 5px; display: block">Path to the executable<sup>2</sup>:</span>
+    <div style="display: flex;">
+      <input type="text" id="path" style="flex: 1;">
+    </div>
+    <div class="note">On Windows, if the path to the executable is not provided (is empty) <code id="l2"></code> is used. On Linux, if the path is not set, it is assumed <code id="l3"></code> binary can be found in the global PATH environment. On Mac OS, <code>open -a</code> command is used (with <code id="l4"></code> as the application or whatever is in the input).</div>
+
+    <h2>Command-Line Options</h2>
+    <pre>
+iexplore.exe [ [ -embedding ]
+               [ -extoff ]
+               [ -framemerging ]
+               [ -k ]
+               [ -noframemerging ]
+               [ -nohangrecovery ]
+               [ -private ] ]
+             [ URL ]
+    </pre>
+    <table class="intro">
+      <tr>
+        <td>-embedding</td>
+        <td>Starts Windows Internet Explorer through OLE embedding (such as the WebBrowser Control).</td>
+      </tr>
+      <tr>
+        <td>-extoff</td>
+        <td>Windows Internet Explorer 7 and later versions. Starts Internet Explorer in No Add-ons mode, which you can use to troubleshoot problems with browser add-ons.</td>
+      </tr>
+      <tr>
+        <td>‑framemerging </td>
+        <td>Windows Internet Explorer 8 and later versions. Enables Internet Explorer to opportunistically merge new frame processes into existing frame processes.</td>
+      </tr>
+      <tr>
+        <td>-k</td>
+        <td>Starts Internet Explorer in kiosk mode. The browser opens in a maximized window that does not display the address bar, the navigation buttons, or the status bar.</td>
+      </tr>
+      <tr>
+        <td>‑noframemerging</td>
+        <td>Internet Explorer 8 and later versions. Prevents Internet Explorer from opportunistically merging new frame processes into existing frame processes. This has the effect of preventing session merging as well, because session merging can only happen with a merged frame process. You can also set this option via registry key</td>
+      </tr>
+      <tr>
+        <td>-nohangrecovery</td>
+        <td>Windows Internet Explorer 9. Prevents Internet Explorer from restarting a tab when it stops responding. This option enables application developers to use debugging tools to investigate problems with Browser Helper Objects (BHOs), Microsoft ActiveX controls, and other browser extentions.</td>
+      </tr>
+      <tr>
+        <td>-private</td>
+        <td>Internet Explorer 8 and later versions. Starts Internet Explorer with InPrivate Browsing set to active. For more information,</td>
+      </tr>
+      <tr>
+        <td>‑nosessionmerging</td>
+        <td>Internet Explorer 8 and later versions. Internet Explorer 8 and later versions. Prevents Internet Explorer from merging tab processes and thus sharing session cookies across tabs. Even if you have the –framemerging feature turned on (which it is by default; see above), specifying this option will isolate your tabs into separate processes and prevent session sharing, even if those tabs are associated with the same frame process. You can also set this option via registry key</td>
+      </tr>
+      <tr>
+        <td>‑sessionmerging</td>
+        <td>Internet Explorer 8 and later versions. Enables Internet Explorer to opportunistically merge new tab processes into existing tab processes within a merged frame process. By default, this setting is turned on. However, if you set the SessionMerging registry key to zero (thus disabling session merging), you can use this command line option to override that setting.</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="admin">This extension supports managed storage. Some of the preferences can be pre-configured by <a href="https://add0n.com/open-in.html#faq17">the domain administrator</a></div>
+
+  <div id="explore" data-inc=50 data-cols="5"></div>
+  <p></p>
+    <button id="preview">YouTube Preview</button>
+    <button id="linux">Linux and Mac Instruction</button>
+    <button id="windows">Windows Instruction</button>
+  <p>
+    <button id="reset">Reset Settings</button>
+    <button id="support">Support Development</button> - <button id="save">Save Options</button>
+    <span id="status"></span>
+  </p>
+
+  <script src="index.js"></script>
+  <script async src="matched/matched.js"></script>
+</body>
+</html>
