@@ -1,7 +1,7 @@
 {
   "name": "Open in IE",
   "description": "Send HTML links and webpages directly to the Internet Explorer browser without copy and paste!",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "manifest_version": 3,
   "minimum_chrome_version": "95",
   "homepage_url": "https://add0n.com/open-in.html?from=ie",
